@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%; 
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 0 0% 0%; 
+    --primary-foreground: 0 0% 100%; 
+    --secondary: 240 4.8% 95.9%; 
+    --secondary-foreground: 0 0% 0%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 89.8%; 
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 0%; 
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 10%; 
+    --foreground: 0 0% 98%; 
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 0%; 
+    --primary-foreground: 0 0% 100%; 
+    --secondary: 0 0% 14.9%; 
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 20%; 
+    --input: 0 0% 20%;
+    --ring: 0 0% 0%; 
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    scroll-behavior: smooth;
+  }
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* Prevent horizontal scroll on html */
+  }
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary) / 0.8) 70%, hsl(var(--primary) / 0.6) 100%);
+}
+
+.glass-effect {
+  background: hsl(var(--background) / 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid hsl(var(--border) / 0.5);
+  color: hsl(var(--foreground));
+}
+
+.glass-effect-darker {
+  background: hsl(var(--primary) / 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid hsl(var(--primary) / 0.2);
+}
+
+
+.package-card {
+  background: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid hsl(var(--border));
+  width: 100%; /* Ensure cards take full width of their container cell */
+}
+
+.package-card:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.selected-package {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border-color: hsl(var(--primary) / 0.8);
+  box-shadow: 0 0 0 3px hsl(var(--primary) / 0.5);
+}
+
+.selected-package .text-primary-custom {
+  color: hsl(var(--primary-foreground));
+}
+.selected-package .text-gray-800 {
+  color: hsl(var(--primary-foreground));
+}
+.selected-package .text-gray-600 {
+  color: hsl(var(--primary-foreground) / 0.8);
+}
+.selected-package .text-gray-700 {
+  color: hsl(var(--primary-foreground) / 0.9);
+}
+.selected-package .text-green-500 {
+  color: hsl(140, 80%, 70%); 
+}
+
+
+.addon-card {
+  background: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  transition: all 0.3s ease;
+  border: 1px solid hsl(var(--border));
+}
+
+.addon-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+}
+
+.selected-addon {
+  background: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+  border-color: hsl(var(--primary));
+  box-shadow: 0 0 0 2px hsl(var(--primary) / 0.4);
+}
+
+.selected-addon .text-primary-custom {
+  color: hsl(var(--primary));
+}
+
+.selected-addon .text-gray-800 {
+  color: hsl(var(--secondary-foreground));
+}
+.selected-addon .text-gray-600 {
+  color: hsl(var(--secondary-foreground) / 0.8);
+}
+
+
+.paypal-button {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  transition: all 0.3s ease;
+}
+
+.paypal-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px hsl(var(--primary) / 0.3);
+  background: hsl(var(--primary) / 0.9);
+}
+
+.text-primary-custom {
+  color: hsl(var(--primary));
+}
+
+.text-primary-custom-darker {
+   color: hsl(var(--primary) / 0.7);
+}
+
+.bg-primary-light {
+  background-color: hsl(var(--primary) / 0.05);
+}
+
+.ring-primary-custom {
+  --tw-ring-color: hsl(var(--primary));
+}
+
+.horizontal-scroll {
+  display: flex;
+  overflow-x: auto;
+  /* padding-bottom: 1rem; */ /* Optional: if you want some space below */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.progress-step {
+  cursor: pointer;
+}
+
+/* Ensure container respects viewport width, especially on mobile */
+.container {
+  max-width: 100%;
+}
