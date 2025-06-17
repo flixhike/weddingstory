@@ -8,7 +8,7 @@ const PackageSelection = React.forwardRef(({ packages, selectedPackage, onPackag
 
   const scrollPackages = (direction) => {
     if (packageScrollContainerRef.current) {
-      const scrollAmount = direction === 'left' ? -320 : 320;
+      const scrollAmount = direction === 'left' ? -280 : 280;
       packageScrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
   };
@@ -84,10 +84,10 @@ const PackageSelection = React.forwardRef(({ packages, selectedPackage, onPackag
         </div>
       </motion.div>
 
-      {/* Package Cards */}
+      {/* Package Cards - Single Row with Minimal Size */}
       <motion.div 
         ref={packageScrollContainerRef} 
-        className="horizontal-scroll gap-6 md:gap-8 pb-6 -mx-4 px-4"
+        className="horizontal-scroll gap-4 pb-6 -mx-4 px-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.8 }}
@@ -95,7 +95,7 @@ const PackageSelection = React.forwardRef(({ packages, selectedPackage, onPackag
         {packages.map((pkg, index) => (
           <motion.div 
             key={pkg.id} 
-            className="min-w-[320px] sm:min-w-[340px] md:min-w-[360px] flex-shrink-0"
+            className="min-w-[240px] max-w-[240px] flex-shrink-0"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1 + index * 0.1 }}
