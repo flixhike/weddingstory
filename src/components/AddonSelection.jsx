@@ -21,8 +21,8 @@ const AddonSelection = React.forwardRef(({ addons, selectedAddons, onAddonToggle
           transition={{ duration: 0.6, delay: 0.4 }}
           className="flex justify-center items-center gap-4 mb-6"
         >
-          <div className="p-3 bg-gold/10 rounded-2xl">
-            <Sparkles className="w-8 h-8 text-gold" />
+          <div className="p-3 bg-red-500/10 rounded-2xl">
+            <Sparkles className="w-8 h-8 text-red-500" />
           </div>
           <h2 className="text-4xl md:text-5xl font-display font-bold text-primary-foreground">
             Enhance Your Experience
@@ -46,11 +46,11 @@ const AddonSelection = React.forwardRef(({ addons, selectedAddons, onAddonToggle
             transition={{ duration: 0.5, delay: 0.8 }}
             className="mt-6 inline-flex items-center gap-3 glass-effect-dark px-6 py-3 rounded-2xl"
           >
-            <Plus className="w-4 h-4 text-gold" />
+            <Plus className="w-4 h-4 text-red-500" />
             <span className="text-primary-foreground font-medium">
               {selectedAddons.length} add-on{selectedAddons.length !== 1 ? 's' : ''} selected
             </span>
-            <div className="w-2 h-2 bg-gold rounded-full animate-pulse"></div>
+            <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
           </motion.div>
         )}
       </div>
@@ -99,7 +99,7 @@ const AddonSelection = React.forwardRef(({ addons, selectedAddons, onAddonToggle
           whileHover={{ scale: 1.05, x: 5 }} 
           whileTap={{ scale: 0.95 }}
           onClick={onContinueToDetails}
-          className="btn-gold flex items-center gap-3 px-8 py-4 rounded-xl font-semibold transition-all w-full sm:w-auto shadow-lg"
+          className="btn-red flex items-center gap-3 px-8 py-4 rounded-xl font-semibold transition-all w-full sm:w-auto shadow-lg"
         >
           Continue to Details
           <ArrowRight className="w-5 h-5" />
@@ -107,8 +107,8 @@ const AddonSelection = React.forwardRef(({ addons, selectedAddons, onAddonToggle
       </motion.div>
 
       {/* Decorative Background Elements */}
-      <div className="absolute top-1/3 right-0 w-56 h-56 bg-gold/5 rounded-full blur-3xl -z-10"></div>
-      <div className="absolute bottom-1/3 left-0 w-40 h-40 bg-gold/10 rounded-full blur-2xl -z-10"></div>
+      <div className="absolute top-1/3 right-0 w-56 h-56 bg-red-500/5 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute bottom-1/3 left-0 w-40 h-40 bg-red-500/10 rounded-full blur-2xl -z-10"></div>
     </motion.section>
   );
 });

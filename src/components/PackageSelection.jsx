@@ -30,8 +30,8 @@ const PackageSelection = React.forwardRef(({ packages, selectedPackage, onPackag
           transition={{ duration: 0.6, delay: 0.2 }}
           className="flex justify-center items-center gap-4 mb-6"
         >
-          <div className="p-3 bg-gold/10 rounded-2xl">
-            <PackageIcon className="w-8 h-8 text-gold" />
+          <div className="p-3 bg-red-500/10 rounded-2xl">
+            <PackageIcon className="w-8 h-8 text-red-500" />
           </div>
           <h2 className="text-4xl md:text-5xl font-display font-bold text-primary-foreground">
             Choose Your Package
@@ -56,7 +56,7 @@ const PackageSelection = React.forwardRef(({ packages, selectedPackage, onPackag
         transition={{ duration: 0.6, delay: 0.6 }}
       >
         <div className="flex items-center gap-3">
-          <Sparkles className="w-5 h-5 text-gold" />
+          <Sparkles className="w-5 h-5 text-red-500" />
           <span className="text-primary-foreground/80 font-medium">
             {packages.length} Packages Available
           </span>
@@ -118,7 +118,7 @@ const PackageSelection = React.forwardRef(({ packages, selectedPackage, onPackag
           className="mt-8 text-center"
         >
           <div className="inline-flex items-center gap-3 glass-effect-dark px-6 py-3 rounded-2xl">
-            <div className="w-3 h-3 bg-gold rounded-full animate-pulse"></div>
+            <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
             <span className="text-primary-foreground font-medium">
               {selectedPackage.name} selected
             </span>
@@ -127,8 +127,8 @@ const PackageSelection = React.forwardRef(({ packages, selectedPackage, onPackag
       )}
 
       {/* Decorative Background Elements */}
-      <div className="absolute top-1/4 left-0 w-64 h-64 bg-gold/5 rounded-full blur-3xl -z-10"></div>
-      <div className="absolute bottom-1/4 right-0 w-48 h-48 bg-gold/10 rounded-full blur-2xl -z-10"></div>
+      <div className="absolute top-1/4 left-0 w-64 h-64 bg-red-500/5 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute bottom-1/4 right-0 w-48 h-48 bg-red-500/10 rounded-full blur-2xl -z-10"></div>
     </motion.section>
   );
 });

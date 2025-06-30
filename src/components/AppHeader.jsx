@@ -26,16 +26,16 @@ const AppHeader = ({ currentStep, scrollToSection, sectionRefs }) => {
           className="flex items-center justify-center gap-4 mb-6"
         >
           <div className="relative">
-            <div className="absolute inset-0 bg-gold/20 rounded-full blur-xl"></div>
+            <div className="absolute inset-0 bg-red-500/20 rounded-full blur-xl"></div>
             <div className="relative p-4 rounded-full glass-effect-dark">
-              <Film className="w-10 h-10 text-gold" />
+              <Film className="w-10 h-10 text-red-500" />
             </div>
           </div>
           <div className="text-left">
             <h1 className="text-5xl md:text-7xl font-display font-bold text-primary-foreground leading-none">
               Capture Your
             </h1>
-            <h1 className="text-5xl md:text-7xl font-display font-bold text-gold leading-none">
+            <h1 className="text-5xl md:text-7xl font-display font-bold text-red-500 leading-none">
               Perfect Moment
             </h1>
           </div>
@@ -76,7 +76,7 @@ const AppHeader = ({ currentStep, scrollToSection, sectionRefs }) => {
               >
                 <div className={`p-2 rounded-lg transition-colors ${
                   currentStep === step 
-                    ? 'bg-primary/20' 
+                    ? 'bg-white/20' 
                     : 'bg-primary-foreground/10'
                 }`}>
                   <Icon className="w-4 h-4" />
@@ -89,7 +89,7 @@ const AppHeader = ({ currentStep, scrollToSection, sectionRefs }) => {
               {index < progressSteps.length - 1 && (
                 <motion.div 
                   className={`w-8 h-0.5 mx-1 transition-colors ${
-                    currentStep > step ? 'bg-gold' : 'bg-primary-foreground/20'
+                    currentStep > step ? 'bg-red-500' : 'bg-primary-foreground/20'
                   }`}
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
@@ -102,8 +102,8 @@ const AppHeader = ({ currentStep, scrollToSection, sectionRefs }) => {
       </motion.div>
 
       {/* Decorative elements */}
-      <div className="absolute top-0 left-1/4 w-32 h-32 bg-gold/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-1/4 w-24 h-24 bg-gold/10 rounded-full blur-2xl"></div>
+      <div className="absolute top-0 left-1/4 w-32 h-32 bg-red-500/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-1/4 w-24 h-24 bg-red-500/10 rounded-full blur-2xl"></div>
     </motion.div>
   );
 };

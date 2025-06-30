@@ -34,8 +34,8 @@ const PaymentSection = React.forwardRef(({
           transition={{ duration: 0.6, delay: 0.8 }}
           className="flex justify-center items-center gap-4 mb-6"
         >
-          <div className="p-3 bg-gold/10 rounded-2xl">
-            <CreditCard className="w-8 h-8 text-gold" />
+          <div className="p-3 bg-red-500/10 rounded-2xl">
+            <CreditCard className="w-8 h-8 text-red-500" />
           </div>
           <h2 className="text-4xl md:text-5xl font-display font-bold text-primary-foreground">
             Confirm & {isQuote ? 'Request Quote' : 'Pay'}
@@ -75,14 +75,14 @@ const PaymentSection = React.forwardRef(({
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 1.4 }}
-          className="glass-effect border-white/10 p-8 rounded-2xl elegant-shadow-lg"
+          className="glass-effect-dark border-white/10 p-8 rounded-2xl elegant-shadow-lg"
         >
           {isQuote ? (
             /* Quote Request Section */
             <div className="space-y-6">
               <div className="text-center mb-6">
-                <div className="p-4 bg-gold/10 rounded-2xl w-fit mx-auto mb-4">
-                  <Send className="w-8 h-8 text-gold" />
+                <div className="p-4 bg-red-500/10 rounded-2xl w-fit mx-auto mb-4">
+                  <Send className="w-8 h-8 text-red-500" />
                 </div>
                 <h3 className="text-2xl font-display font-semibold text-foreground mb-2">
                   Custom Quote Request
@@ -92,27 +92,27 @@ const PaymentSection = React.forwardRef(({
                 </p>
               </div>
 
-              <div className="bg-gold/5 border border-gold/20 rounded-xl p-6 space-y-4">
+              <div className="bg-red-500/5 border border-red-500/20 rounded-xl p-6 space-y-4">
                 <h4 className="font-semibold text-foreground flex items-center gap-2">
-                  <Shield className="w-5 h-5 text-gold" />
+                  <Shield className="w-5 h-5 text-red-500" />
                   What happens next?
                 </h4>
                 <ul className="space-y-3 text-sm text-foreground/80">
                   <li className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-gold/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-xs font-bold text-gold">1</span>
+                    <div className="w-6 h-6 bg-red-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-xs font-bold text-red-500">1</span>
                     </div>
                     <span>We'll review your package selection and requirements</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-gold/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-xs font-bold text-gold">2</span>
+                    <div className="w-6 h-6 bg-red-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-xs font-bold text-red-500">2</span>
                     </div>
                     <span>Our team will prepare a detailed, personalized quote</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-gold/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <span className="text-xs font-bold text-gold">3</span>
+                    <div className="w-6 h-6 bg-red-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <span className="text-xs font-bold text-red-500">3</span>
                     </div>
                     <span>We'll contact you within 24 hours to discuss your project</span>
                   </li>
@@ -123,7 +123,7 @@ const PaymentSection = React.forwardRef(({
                 whileHover={{ scale: 1.02, y: -2 }} 
                 whileTap={{ scale: 0.98 }}
                 onClick={() => processOrder()}
-                className="w-full btn-gold flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-semibold text-lg shadow-lg"
+                className="w-full btn-red flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-semibold text-lg shadow-lg"
               >
                 <Send className="w-5 h-5" />
                 Submit Quote Request
@@ -144,15 +144,15 @@ const PaymentSection = React.forwardRef(({
             /* Payment Section */
             <div className="space-y-6">
               <div className="text-center mb-6">
-                <div className="p-4 bg-gold/10 rounded-2xl w-fit mx-auto mb-4">
-                  <CreditCard className="w-8 h-8 text-gold" />
+                <div className="p-4 bg-red-500/10 rounded-2xl w-fit mx-auto mb-4">
+                  <CreditCard className="w-8 h-8 text-red-500" />
                 </div>
                 <h3 className="text-2xl font-display font-semibold text-foreground mb-2">
                   Secure Payment
                 </h3>
                 <div className="space-y-2">
                   <p className="text-lg font-semibold text-foreground">
-                    Total: <span className="text-gold font-display">${totalAmount.toLocaleString()}</span>
+                    Total: <span className="text-red-500 font-display">${totalAmount.toLocaleString()}</span>
                   </p>
                   <p className="text-sm text-foreground/60 leading-relaxed">
                     Complete your booking with our secure PayPal payment system
@@ -231,8 +231,8 @@ const PaymentSection = React.forwardRef(({
       </div>
 
       {/* Decorative Background Elements */}
-      <div className="absolute top-1/4 right-0 w-72 h-72 bg-gold/5 rounded-full blur-3xl -z-10"></div>
-      <div className="absolute bottom-1/4 left-0 w-56 h-56 bg-gold/10 rounded-full blur-2xl -z-10"></div>
+      <div className="absolute top-1/4 right-0 w-72 h-72 bg-red-500/5 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute bottom-1/4 left-0 w-56 h-56 bg-red-500/10 rounded-full blur-2xl -z-10"></div>
     </motion.section>
   );
 });

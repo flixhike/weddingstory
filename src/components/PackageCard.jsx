@@ -14,20 +14,20 @@ const PackageCard = ({ pkg, isSelected, onSelect }) => {
       className="relative flex flex-col h-full w-full"
     >
       <Card 
-        className={`package-card cursor-pointer flex flex-col flex-grow relative overflow-visible ${
+        className={`package-card cursor-pointer flex flex-col flex-grow relative overflow-hidden ${
           isSelected ? 'selected-package' : ''
         }`}
         onClick={() => onSelect(pkg)}
       >
-        {/* Popular Badge - Fixed positioning and visibility */}
+        {/* Popular Badge - Better positioning */}
         {pkg.popular && (
           <motion.div 
-            className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-30"
+            className="absolute -top-3 -right-3 z-30"
             initial={{ scale: 0, rotate: -10 }}
             animate={{ scale: 1, rotate: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 shadow-lg border-2 border-white">
+            <div className="bg-gradient-to-r from-red-600 to-red-500 text-white px-4 py-2 rounded-full text-xs font-bold flex items-center gap-1.5 shadow-lg border-2 border-white">
               <Star className="w-3 h-3 fill-current" />
               Most Popular
             </div>
@@ -63,13 +63,13 @@ const PackageCard = ({ pkg, isSelected, onSelect }) => {
           {!pkg.image && (
             <motion.div 
               className={`mx-auto mb-2 p-2 rounded-xl ${
-                isSelected ? 'bg-primary-foreground/20' : 'bg-gold-light'
+                isSelected ? 'bg-primary-foreground/20' : 'bg-red-500/10'
               }`}
               whileHover={{ rotate: 5, scale: 1.1 }}
               transition={{ duration: 0.3 }}
             >
               <PackageIcon className={`w-5 h-5 ${
-                isSelected ? 'text-primary-foreground' : 'text-gold'
+                isSelected ? 'text-primary-foreground' : 'text-red-500'
               }`} />
             </motion.div>
           )}
@@ -85,7 +85,7 @@ const PackageCard = ({ pkg, isSelected, onSelect }) => {
             {pkg.price > 0 ? (
               <div className="flex items-center justify-center gap-1">
                 <span className={`text-lg font-bold font-display ${
-                  isSelected ? 'text-gold' : 'text-primary'
+                  isSelected ? 'text-red-500' : 'text-primary'
                 }`}>
                   ${pkg.price.toLocaleString()}
                 </span>
@@ -97,7 +97,7 @@ const PackageCard = ({ pkg, isSelected, onSelect }) => {
               </div>
             ) : (
               <div className={`text-sm font-bold font-display ${
-                isSelected ? 'text-gold' : 'text-primary'
+                isSelected ? 'text-red-500' : 'text-primary'
               }`}>
                 Custom Quote
               </div>
@@ -123,10 +123,10 @@ const PackageCard = ({ pkg, isSelected, onSelect }) => {
                 transition={{ duration: 0.3, delay: index * 0.1 }}
               >
                 <div className={`p-0.5 rounded-full mt-0.5 ${
-                  isSelected ? 'bg-gold/20' : 'bg-gold-light'
+                  isSelected ? 'bg-red-500/20' : 'bg-red-500/10'
                 }`}>
                   <Check className={`w-2.5 h-2.5 ${
-                    isSelected ? 'text-gold' : 'text-gold'
+                    isSelected ? 'text-red-500' : 'text-red-500'
                   }`} />
                 </div>
                 <span className={`leading-relaxed ${
@@ -137,7 +137,7 @@ const PackageCard = ({ pkg, isSelected, onSelect }) => {
               </motion.li>
             ))}
             {pkg.features.length > 3 && (
-              <li className={`text-xs ${isSelected ? 'text-gold' : 'text-gold'} font-medium`}>
+              <li className={`text-xs ${isSelected ? 'text-red-500' : 'text-red-500'} font-medium`}>
                 +{pkg.features.length - 3} more
               </li>
             )}
@@ -153,7 +153,7 @@ const PackageCard = ({ pkg, isSelected, onSelect }) => {
               size="sm"
               className={`w-full text-xs font-semibold py-2 rounded-lg transition-all duration-300 ${
                 isSelected 
-                  ? 'btn-gold shadow-lg' 
+                  ? 'btn-red shadow-lg' 
                   : 'btn-primary'
               }`}
               onClick={(e) => {

@@ -21,8 +21,8 @@ const CustomerDetailsSection = React.forwardRef(({ customerData, onFormChange, o
           transition={{ duration: 0.6, delay: 0.6 }}
           className="flex justify-center items-center gap-4 mb-6"
         >
-          <div className="p-3 bg-gold/10 rounded-2xl">
-            <Shield className="w-8 h-8 text-gold" />
+          <div className="p-3 bg-red-500/10 rounded-2xl">
+            <Shield className="w-8 h-8 text-red-500" />
           </div>
           <h2 className="text-4xl md:text-5xl font-display font-bold text-primary-foreground">
             Your Details
@@ -70,7 +70,7 @@ const CustomerDetailsSection = React.forwardRef(({ customerData, onFormChange, o
           whileHover={{ scale: 1.05, x: 5 }} 
           whileTap={{ scale: 0.95 }}
           onClick={onProceedToPayment}
-          className="btn-gold flex items-center gap-3 px-8 py-4 rounded-xl font-semibold transition-all w-full sm:w-auto shadow-lg"
+          className="btn-red flex items-center gap-3 px-8 py-4 rounded-xl font-semibold transition-all w-full sm:w-auto shadow-lg"
         >
           Proceed to Payment
           <ArrowRight className="w-5 h-5" />
@@ -78,8 +78,8 @@ const CustomerDetailsSection = React.forwardRef(({ customerData, onFormChange, o
       </motion.div>
 
       {/* Decorative Background Elements */}
-      <div className="absolute top-1/4 left-0 w-48 h-48 bg-gold/5 rounded-full blur-3xl -z-10"></div>
-      <div className="absolute bottom-1/4 right-0 w-64 h-64 bg-gold/10 rounded-full blur-2xl -z-10"></div>
+      <div className="absolute top-1/4 left-0 w-48 h-48 bg-red-500/5 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute bottom-1/4 right-0 w-64 h-64 bg-red-500/10 rounded-full blur-2xl -z-10"></div>
     </motion.section>
   );
 });

@@ -65,7 +65,7 @@ const CustomerForm = ({ formData, onFormChange }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <Card className="glass-effect border-white/10 elegant-shadow-lg">
+      <Card className="glass-effect-dark border-white/10 elegant-shadow-lg">
         <CardHeader className="pb-6">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -73,8 +73,8 @@ const CustomerForm = ({ formData, onFormChange }) => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <CardTitle className="text-2xl font-display font-semibold text-foreground flex items-center gap-3">
-              <div className="p-2 bg-gold/10 rounded-xl">
-                <User className="w-6 h-6 text-gold" />
+              <div className="p-2 bg-red-500/10 rounded-xl">
+                <User className="w-6 h-6 text-red-500" />
               </div>
               Your Contact Information
             </CardTitle>
@@ -99,8 +99,8 @@ const CustomerForm = ({ formData, onFormChange }) => {
                   htmlFor={field.id} 
                   className="text-sm font-medium text-foreground/90 flex items-center gap-2"
                 >
-                  <field.icon className="w-4 h-4 text-gold" />
-                  {field.label} {field.required && <span className="text-gold">*</span>}
+                  <field.icon className="w-4 h-4 text-red-500" />
+                  {field.label} {field.required && <span className="text-red-500">*</span>}
                 </Label>
                 <Input
                   id={field.id}
@@ -126,8 +126,8 @@ const CustomerForm = ({ formData, onFormChange }) => {
               htmlFor="address" 
               className="text-sm font-medium text-foreground/90 flex items-center gap-2"
             >
-              <MapPin className="w-4 h-4 text-gold" />
-              Address <span className="text-gold">*</span>
+              <MapPin className="w-4 h-4 text-red-500" />
+              Address <span className="text-red-500">*</span>
             </Label>
             <Textarea
               id="address"
@@ -151,7 +151,7 @@ const CustomerForm = ({ formData, onFormChange }) => {
               htmlFor="requirements" 
               className="text-sm font-medium text-foreground/90 flex items-center gap-2"
             >
-              <MessageSquare className="w-4 h-4 text-gold" />
+              <MessageSquare className="w-4 h-4 text-red-500" />
               Special Requirements or Notes
             </Label>
             <Textarea
@@ -172,7 +172,7 @@ const CustomerForm = ({ formData, onFormChange }) => {
             className="pt-4 border-t border-foreground/10"
           >
             <p className="text-sm text-foreground/60 leading-relaxed">
-              <span className="text-gold">*</span> Required fields. Your information is secure and will only be used to provide you with the best possible service.
+              <span className="text-red-500">*</span> Required fields. Your information is secure and will only be used to provide you with the best possible service.
             </p>
           </motion.div>
         </CardContent>
